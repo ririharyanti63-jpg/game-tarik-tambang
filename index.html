@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Battle Tarik Tambang - IPAS</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="game-shell">
+      <div class="sky-layer sky-back"></div>
+      <div class="sky-layer sky-front"></div>
+      <header class="top-bar">
+        <div class="brand-block">
+          <span class="tiny-tag">MINECRAFT STYLE</span>
+          <h1>Battle Tarik Tambang</h1>
+        </div>
+
+        <div class="control-panel">
+          <label>
+            <span>Tim Merah</span>
+            <input id="teamRedNameInput" type="text" value="Tim Merah" maxlength="18" />
+          </label>
+          <label>
+            <span>Tim Biru</span>
+            <input id="teamBlueNameInput" type="text" value="Tim Biru" maxlength="18" />
+          </label>
+          <button id="startGameBtn" class="primary-btn">Mulai Battle</button>
+          <button id="musicToggleBtn" class="secondary-btn">Musik: Nyala</button>
+        </div>
+      </header>
+
+      <main class="battlefield">
+        <aside class="team-side red-side">
+          <div class="team-header">
+            <span class="team-badge red">R</span>
+            <h2 id="teamRedName">Tim Merah</h2>
+          </div>
+
+          <div class="players-row" aria-label="Pemain tim merah">
+            <div class="player-avatar red-player"><span class="head"></span><span class="body"></span><span class="arm left"></span><span class="arm right"></span><span class="leg left"></span><span class="leg right"></span></div>
+            <div class="player-avatar red-player"><span class="head"></span><span class="body"></span><span class="arm left"></span><span class="arm right"></span><span class="leg left"></span><span class="leg right"></span></div>
+            <div class="player-avatar red-player"><span class="head"></span><span class="body"></span><span class="arm left"></span><span class="arm right"></span><span class="leg left"></span><span class="leg right"></span></div>
+            <div class="player-avatar red-player"><span class="head"></span><span class="body"></span><span class="arm left"></span><span class="arm right"></span><span class="leg left"></span><span class="leg right"></span></div>
+            <div class="player-avatar red-player"><span class="head"></span><span class="body"></span><span class="arm left"></span><span class="arm right"></span><span class="leg left"></span><span class="leg right"></span></div>
+            <div class="player-avatar red-player"><span class="head"></span><span class="body"></span><span class="arm left"></span><span class="arm right"></span><span class="leg left"></span><span class="leg right"></span></div>
+          </div>
+
+          <div class="score-panel red-score-panel">
+            <span>Skor</span>
+            <strong id="redScore">0</strong>
+          </div>
+        </aside>
+
+        <section class="center-stage">
+          <div class="rope-area">
+            <div class="rope-glow"></div>
+            <div class="rope"></div>
+            <div class="rope-handle left-handle"></div>
+            <div class="rope-handle right-handle"></div>
+          </div>
+
+          <div class="question-card">
+            <div class="round-label-wrap">
+              <span class="round-label">Ronde</span>
+              <span id="roundIndicator" class="round-indicator">0 / 12</span>
+            </div>
+            <div class="timer-box">
+              <span>Waktu</span>
+              <strong id="timerText">20</strong>
+            </div>
+
+            <h3 id="questionText">Klik mulai untuk memulai permainan.</h3>
+
+            <div class="answer-grid">
+              <div class="answer-column red-column">
+                <button class="answer-btn red-answer" data-team="red" data-index="0">A. ...</button>
+                <button class="answer-btn red-answer" data-team="red" data-index="1">B. ...</button>
+                <button class="answer-btn red-answer" data-team="red" data-index="2">C. ...</button>
+                <button class="answer-btn red-answer" data-team="red" data-index="3">D. ...</button>
+              </div>
+
+              <div class="answer-column blue-column">
+                <button class="answer-btn blue-answer" data-team="blue" data-index="0">A. ...</button>
+                <button class="answer-btn blue-answer" data-team="blue" data-index="1">B. ...</button>
+                <button class="answer-btn blue-answer" data-team="blue" data-index="2">C. ...</button>
+                <button class="answer-btn blue-answer" data-team="blue" data-index="3">D. ...</button>
+              </div>
+            </div>
+
+            <div id="statusText" class="status-text">Siap untuk bertarung!</div>
+          </div>
+        </section>
+
+        <aside class="team-side blue-side">
+          <div class="team-header">
+            <span class="team-badge blue">B</span>
+            <h2 id="teamBlueName">Tim Biru</h2>
+          </div>
+
+          <div class="players-row" aria-label="Pemain tim biru">
+            <div class="player-avatar blue-player"><span class="head"></span><span class="body"></span><span class="arm left"></span><span class="arm right"></span><span class="leg left"></span><span class="leg right"></span></div>
+            <div class="player-avatar blue-player"><span class="head"></span><span class="body"></span><span class="arm left"></span><span class="arm right"></span><span class="leg left"></span><span class="leg right"></span></div>
+            <div class="player-avatar blue-player"><span class="head"></span><span class="body"></span><span class="arm left"></span><span class="arm right"></span><span class="leg left"></span><span class="leg right"></span></div>
+            <div class="player-avatar blue-player"><span class="head"></span><span class="body"></span><span class="arm left"></span><span class="arm right"></span><span class="leg left"></span><span class="leg right"></span></div>
+            <div class="player-avatar blue-player"><span class="head"></span><span class="body"></span><span class="arm left"></span><span class="arm right"></span><span class="leg left"></span><span class="leg right"></span></div>
+            <div class="player-avatar blue-player"><span class="head"></span><span class="body"></span><span class="arm left"></span><span class="arm right"></span><span class="leg left"></span><span class="leg right"></span></div>
+          </div>
+
+          <div class="score-panel blue-score-panel">
+            <span>Skor</span>
+            <strong id="blueScore">0</strong>
+          </div>
+        </aside>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
